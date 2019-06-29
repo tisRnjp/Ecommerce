@@ -16,7 +16,6 @@
     <ProjectReference Include="..\Ecommerce.Common\Ecommerce.Common.csproj" />
     <ProjectReference Include="..\Ecommerce.Data\Ecommerce.Data.csproj" />
     <ProjectReference Include="..\Ecommerce.EF\Ecommerce.EF.csproj" />
-    <ProjectReference Include="..\Ecommerce.Repositories\Ecommerce.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

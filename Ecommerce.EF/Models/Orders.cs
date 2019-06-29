@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ecommerce.EF.Models
+namespace Ecommerce.EF.Model
 {
     public partial class Orders
     {

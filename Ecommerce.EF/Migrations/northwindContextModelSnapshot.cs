@@ -16,7 +16,7 @@ namespace Ecommerce.EF.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
-            modelBuilder.Entity("Ecommerce.EF.Models.Categories", b =>
+            modelBuilder.Entity("Ecommerce.EF.Model.Categories", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace Ecommerce.EF.Migrations
                     b.ToTable("categories","northwind");
                 });
 
-            modelBuilder.Entity("Ecommerce.EF.Models.Customers", b =>
+            modelBuilder.Entity("Ecommerce.EF.Model.Customers", b =>
                 {
                     b.Property<string>("CustomerId")
                         .HasColumnName("CustomerID")
@@ -114,7 +114,7 @@ namespace Ecommerce.EF.Migrations
                     b.ToTable("customers","northwind");
                 });
 
-            modelBuilder.Entity("Ecommerce.EF.Models.Employees", b =>
+            modelBuilder.Entity("Ecommerce.EF.Model.Employees", b =>
                 {
                     b.Property<int>("EmployeeId")
                         .ValueGeneratedOnAdd()
@@ -191,7 +191,7 @@ namespace Ecommerce.EF.Migrations
                     b.ToTable("employees","northwind");
                 });
 
-            modelBuilder.Entity("Ecommerce.EF.Models.OrderDetails", b =>
+            modelBuilder.Entity("Ecommerce.EF.Model.OrderDetails", b =>
                 {
                     b.Property<int>("OrderId")
                         .HasColumnName("OrderID")
@@ -226,7 +226,7 @@ namespace Ecommerce.EF.Migrations
                     b.ToTable("order details","northwind");
                 });
 
-            modelBuilder.Entity("Ecommerce.EF.Models.Orders", b =>
+            modelBuilder.Entity("Ecommerce.EF.Model.Orders", b =>
                 {
                     b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
@@ -300,7 +300,7 @@ namespace Ecommerce.EF.Migrations
                     b.ToTable("orders","northwind");
                 });
 
-            modelBuilder.Entity("Ecommerce.EF.Models.Products", b =>
+            modelBuilder.Entity("Ecommerce.EF.Model.Products", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -363,7 +363,7 @@ namespace Ecommerce.EF.Migrations
                     b.ToTable("products","northwind");
                 });
 
-            modelBuilder.Entity("Ecommerce.EF.Models.Shippers", b =>
+            modelBuilder.Entity("Ecommerce.EF.Model.Shippers", b =>
                 {
                     b.Property<int>("ShipperId")
                         .ValueGeneratedOnAdd()
@@ -384,7 +384,7 @@ namespace Ecommerce.EF.Migrations
                     b.ToTable("shippers","northwind");
                 });
 
-            modelBuilder.Entity("Ecommerce.EF.Models.Suppliers", b =>
+            modelBuilder.Entity("Ecommerce.EF.Model.Suppliers", b =>
                 {
                     b.Property<int>("SupplierId")
                         .ValueGeneratedOnAdd()

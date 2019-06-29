@@ -1,6 +1,6 @@
 ﻿using Ecommerce.EF.EntityConfigurations;
-using Ecommerce.EF.Models;
 using Microsoft.EntityFrameworkCore;
+using Ecommerce.EF.Model;
 
 namespace Ecommerce.EF
 {
