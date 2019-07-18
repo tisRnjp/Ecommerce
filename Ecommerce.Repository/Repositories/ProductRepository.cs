@@ -1,36 +1,17 @@
-﻿using Ecommerce.EF.Model;
+﻿using Ecommerce.EF;
+using Ecommerce.EF.Model;
 using Ecommerce.Repository.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Ecommerce.Repository.Repositories
 {
-    class ProductRepository : IProductRepository
+    public class ProductRepository : Repository<Products>, IProductRepository
     {
-        public void Add(Products entity)
+        public ProductRepository(northwindContext context) : base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Products entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Products Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Products> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Products entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

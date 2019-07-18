@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecommerce.EF.Model;
+using Ecommerce.Service.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Controllers
@@ -12,9 +14,11 @@ namespace Ecommerce.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IEnumerable<Products> Get()
         {
-            return new string[] { "value1", "value2" };
+            var productService = new ProductService();
+
+            return productService.GetAll(); 
         }
 
         // GET api/values/5

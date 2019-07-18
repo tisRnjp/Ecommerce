@@ -1,36 +1,17 @@
-﻿using Ecommerce.EF.Model;
+﻿using Ecommerce.EF;
+using Ecommerce.EF.Model;
 using Ecommerce.Repository.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Ecommerce.Repository.Repositories
 {
-    public class OrderDetailRepository : IOrderDetailRepository
+    public class OrderDetailRepository : Repository<OrderDetails>, IOrderDetailRepository
     {
-        public void Add(OrderDetails entity)
+        public OrderDetailRepository(northwindContext context) : base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(OrderDetails entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public OrderDetails Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<OrderDetails> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(OrderDetails entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }
