@@ -4,6 +4,15 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
@@ -11,12 +20,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Ecommerce.Common\Ecommerce.Common.csproj" />
     <ProjectReference Include="..\Ecommerce.Data\Ecommerce.Data.csproj" />
     <ProjectReference Include="..\Ecommerce.EF\Ecommerce.EF.csproj" />
+    <ProjectReference Include="..\Ecommerce.Repository\Ecommerce.Repository.csproj" />
     <ProjectReference Include="..\Ecommerce.Service\Ecommerce.Service.csproj" />
   </ItemGroup>
 

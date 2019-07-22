@@ -44,7 +44,11 @@ namespace Ecommerce.Controllers
 
         }
 
-        // GET: api/Product/5
+        /// <summary>
+        /// Get a product of certain ID
+        /// </summary>
+        /// <param name="id">ID of a product</param>
+        /// <returns>Product details</returns>
         [HttpGet("{id}", Name = "Get")]
         public ActionResult<Products> Get(int id)
         {

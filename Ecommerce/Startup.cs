@@ -13,6 +13,8 @@ using Microsoft.Extensions.Options;
 using Ecommerce.Repository.Interface;
 using Ecommerce.Repository.Repositories;
 using Ecommerce.EF;
+using System.Reflection;
+using System.IO;
 
 namespace Ecommerce
 {
@@ -31,6 +33,19 @@ namespace Ecommerce
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<northwindContext>(s => new northwindContext());
+
+            services.AddSwaggerGen(setupAction =>
+            {
+                setupAction.SwaggerDoc("APISpecification", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "Ecommerce API",
+                    Version = "v1.0"
+                });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlFullPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                setupAction.IncludeXmlComments(xmlFullPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +61,14 @@ namespace Ecommerce
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(setupAction =>
+            {
+                setupAction.SwaggerEndpoint("/swagger/APISpecification/swagger.json", "Ecommerce API");
+                setupAction.RoutePrefix = "";
+            });
+
             app.UseMvc();
         }
     }
